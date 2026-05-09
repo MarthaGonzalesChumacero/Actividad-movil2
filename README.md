@@ -1,75 +1,197 @@
-# React + TypeScript + Vite
+# Práctica de React - Programación Web II
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Estudiante:** Martha Gonzales Chumacero  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Configuración del Entorno de Desarrollo
 
-## React Compiler
+Para esta práctica se configuró un entorno de desarrollo moderno utilizando las siguientes herramientas:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+1. **WSL (Ubuntu)** → Entorno Linux dentro de Windows.
+2. **Fish Shell & Fisher** → Terminal optimizada para desarrollo.
+3. **Node.js & npm** → Entorno de ejecución para JavaScript.
+4. **Vite** → Herramienta rápida para crear proyectos React.
+5. **React + TypeScript** → Framework frontend utilizado en la práctica.
+6. **VS Code** → Editor de código utilizado para el proyecto.
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+# Verificación del Entorno
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Se verificó correctamente la instalación de las herramientas necesarias mediante comandos en terminal.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Captura de Verificación
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+![Verificación del Entorno](public/CapturaUbuntuMGCH.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pwd
+fish -v
+fisher -v
+nvm -v
+node -v
+pnpm -v
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Instalación de WSL 2
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Se instaló Ubuntu mediante WSL para trabajar en un entorno Linux dentro de Windows.
+
+```bash
+wsl --install
+
+wsl --update
+
+wsl --list --verbose
+
+wsl --set-version Ubuntu 2
+
+wsl --set-default-version 2
 ```
+
+---
+
+# Instalación de Fish Shell
+
+Fish Shell fue utilizado para mejorar la experiencia en terminal.
+
+```bash
+sudo apt update
+
+sudo apt install fish
+
+fish
+```
+
+---
+
+# Instalación de Fisher
+
+Fisher fue instalado como administrador de paquetes para Fish Shell.
+
+```bash
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+```
+
+---
+
+# Instalación de Node.js y npm
+
+Se instalaron Node.js y npm para ejecutar proyectos React.
+
+```bash
+sudo apt install nodejs npm
+```
+
+Verificación:
+
+```bash
+node -v
+
+npm -v
+```
+
+---
+
+# Creación del Proyecto React con Vite y TypeScript
+
+Se creó un proyecto React utilizando Vite y TypeScript.
+
+```bash
+npm create vite@latest
+```
+
+Opciones seleccionadas:
+
+```text
+Project name:
+bases
+
+Select a framework:
+React
+
+Select a variant:
+TypeScript + React Compiler
+```
+
+## Captura de Creación del Proyecto
+
+![Creación del Proyecto](public/CapturaUbuntu.png)
+
+---
+
+# Instalación de Dependencias
+
+Luego de crear el proyecto se instalaron las dependencias necesarias.
+
+```bash
+cd bases
+
+npm install
+```
+
+---
+
+# Ejecución del Proyecto
+
+Para iniciar el servidor de desarrollo se ejecutó:
+
+```bash
+npm run dev
+```
+
+El proyecto quedó disponible en:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# Captura del Proyecto React
+
+Se ejecutó correctamente el proyecto React utilizando Vite en Ubuntu WSL desde Visual Studio Code.
+
+![Captura Proyecto](public/CapturaLocal.png)
+
+---
+
+# Estructura Generada del Proyecto
+
+El proyecto React generado automáticamente contiene la siguiente estructura:
+
+```text
+bases/
+│
+├── node_modules/
+├── public/
+├── src/
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+# Herramientas Utilizadas
+
+- Ubuntu WSL2
+- Fish Shell
+- Fisher
+- Node.js
+- npm
+- React
+- TypeScript
+- Vite
+- Visual Studio Code
+- GitHub
+
+---
+
+# Resultado Final
+
+Se logró configurar correctamente un entorno de desarrollo moderno utilizando Ubuntu WSL, Fish Shell y React con Vite, permitiendo ejecutar aplicaciones React localmente desde Visual Studio Code.
