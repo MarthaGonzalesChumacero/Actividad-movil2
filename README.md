@@ -80,10 +80,12 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # Instalación de Node.js y npm
 
-Se instalaron Node.js y npm para ejecutar proyectos React.
+Se instalaron y actualizó Node.js a la versión más reciente utilizando nvm para trabajar con proyectos React modernos.
 
 ```bash
-sudo apt install nodejs npm
+nvm install latest
+
+nvm use latest
 ```
 
 Verificación:
